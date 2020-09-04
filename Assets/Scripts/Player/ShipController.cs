@@ -57,7 +57,7 @@ public class ShipController : MonoBehaviour
 
     void Shoot() {
         lastShotTime += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && lastShotTime >= secondsBetweenShots) {
+        if (Input.GetKey(KeyCode.UpArrow) && lastShotTime >= secondsBetweenShots) {
             lastShotTime = 0f;
             Instantiate(bullet, transform.position, transform.rotation);
         }
