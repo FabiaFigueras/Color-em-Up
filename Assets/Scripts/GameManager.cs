@@ -7,12 +7,13 @@ public class GameManager : MonoBehaviour
 
     public int playerLives = 3;
     
+    private GameObject player;
     private int score = 0;
-    public int scoreLostPerHit = 5;
+    public int scoreLostPerLive = 50;
 
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
@@ -31,7 +32,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void HitTaken() {
-        score -= scoreLostPerHit;
+        score -= scoreLostPerLive;
         Debug.Log("New score: " + score + " [Hit taken]");
+        playerLives--;
+        if (playerLives <= 0) {
+            Debug.Log("No lives left: GAME OVER");
+            Destroy(player);
+        }
     }
 }
