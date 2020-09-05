@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ShipController : MonoBehaviour
 {
+    public GameObject ship;
+    private Collider2D shipCollider;
+    private GameManager gameManager;
 
     public float movementSpeed = 5f;
     public GameObject bullet;
@@ -16,6 +19,8 @@ public class ShipController : MonoBehaviour
     void Start()
     {
         lastShotTime = secondsBetweenShots;
+        shipCollider = ship.GetComponent<Collider2D>();
+        gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
 
     void Update()

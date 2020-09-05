@@ -29,9 +29,10 @@ public class EnemyShot : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Ship")) {
-            Debug.Log("Player hit trigger");
             Destroy(gameObject);
             gameManager.HitTaken();
+        } else if (col.CompareTag("Barrier") && col.gameObject.GetComponent<BarrierModifier>().modifierType.Equals(type)) {
+            Destroy(gameObject);
         }
     }
 }

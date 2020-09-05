@@ -31,9 +31,9 @@ public class Shot : MonoBehaviour
             GetComponent<SpriteRenderer>().color = type.GetColor();
         } else if (col.CompareTag("Enemy")) {
             EnemyBasic enemyCol = col.gameObject.GetComponent<EnemyBasic>();
-            if (type == enemyCol.bulletWeakness || enemyCol.bulletWeakness == BulletType.DEFAULT) {
+            if (enemyCol.CanBeDamaged(type)) {
                 gameManager.EnemyDestroyed(enemyCol.pointsAwarded);
-                Destroy(enemyCol.gameObject);
+                enemyCol.DestroyShip();
             }
         }
     }
@@ -51,6 +51,10 @@ public static class Extensions {
             default:
                 return Color.white;
         }
+    }
+
+    public static bool Equals(this BulletType type, BulletType other) {
+        return type == other;
     }
 }
 

@@ -5,14 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public int playerLives = 3;
+    public int shipPower = 3;
     
+    private ShakeController mainCamera;
     private GameObject player;
     private int score = 0;
     public int scoreLostPerLive = 50;
 
     void Start()
     {
+        mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<ShakeController>();
         player = GameObject.FindWithTag("Player");
     }
 
@@ -23,20 +25,21 @@ public class GameManager : MonoBehaviour
 
     public void EnemyDestroyed(int scoreToAdd) {
         score += scoreToAdd;
-        Debug.Log("New score: " + score + "[Enemy destroyed]");
+        // Debug.Log("New score: " + score + "[Enemy destroyed]");
     }
 
     public void NewWave(int waveScore) {
         score += waveScore;
-        Debug.Log("New score: " + score + "[New wave]");
+        // Debug.Log("New score: " + score + "[New wave]");
     }
 
     public void HitTaken() {
         score -= scoreLostPerLive;
-        Debug.Log("New score: " + score + " [Hit taken]");
-        playerLives--;
-        if (playerLives <= 0) {
-            Debug.Log("No lives left: GAME OVER");
+        // Debug.Log("New score: " + score + " [Hit taken]");
+        mainCamera.TriggerShake();
+        shipPower--;
+        if (shipPower <= 0) {
+            Debug.Log("No power left: GAME OVER");
             Destroy(player);
         }
     }
