@@ -5,9 +5,11 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
     public GameObject ship;
+    public ParticleSystem deathParticles;
     private Collider2D shipCollider;
     private GameManager gameManager;
 
+    public bool isAlive = true;
     public float movementSpeed = 5f;
     public GameObject bullet;
     public float secondsBetweenShots = 0.2f;
@@ -25,8 +27,10 @@ public class ShipController : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Shoot();
+        if (isAlive) {
+            Move();
+            Shoot();
+        }
     }
 
     void Move() {
@@ -66,5 +70,16 @@ public class ShipController : MonoBehaviour
             lastShotTime = 0f;
             Instantiate(bullet, transform.position, transform.rotation);
         }
+    }
+
+    public void DestroyShip() {
+        isAlive = false;
+        Instantiate(deathParticles, transform.position, transform.rotation);
+        StartCoroutine(RemoveShip());
+    }
+
+    IEnumerator RemoveShip() {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

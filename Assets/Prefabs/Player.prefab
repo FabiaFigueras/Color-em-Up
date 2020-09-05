@@ -506,7 +506,6 @@ GameObject:
   - component: {fileID: 5779295232832823431}
   - component: {fileID: 5779295232832823425}
   - component: {fileID: 5779295232832823424}
-  - component: {fileID: 8019791983147886995}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Ship
@@ -608,27 +607,6 @@ PolygonCollider2D:
       - {x: -0.171875, y: -0.125}
       - {x: 0.15625, y: -0.125}
       - {x: 0.03125, y: 0.09375}
---- !u!50 &8019791983147886995
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779295232832823430}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &5779295232965344467
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: {fileID: 5779295232832823430}
-  movementSpeed: 3.5
+  deathParticles: {fileID: 4250555378660597400, guid: 8e79055dac2c330498a3b17fcdbba3f7, type: 3}
+  movementSpeed: 3
   bullet: {fileID: 7030157052941058865, guid: a1c6e31b8c5b9014dadb2f9588762f91, type: 3}
-  secondsBetweenShots: 0.2
+  secondsBetweenShots: 0.5

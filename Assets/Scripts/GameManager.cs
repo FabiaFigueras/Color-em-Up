@@ -8,14 +8,14 @@ public class GameManager : MonoBehaviour
     public int shipPower = 3;
     
     private ShakeController mainCamera;
-    private GameObject player;
+    private ShipController player;
     private int score = 0;
     public int scoreLostPerLive = 50;
 
     void Start()
     {
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<ShakeController>();
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player").GetComponent<ShipController>();
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         shipPower--;
         if (shipPower <= 0) {
             Debug.Log("No power left: GAME OVER");
-            Destroy(player);
+            player.DestroyShip();
         }
     }
 }
