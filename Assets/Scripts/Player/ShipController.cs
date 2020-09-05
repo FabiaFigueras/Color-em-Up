@@ -15,7 +15,7 @@ public class ShipController : MonoBehaviour
     public float secondsBetweenShots = 0.2f;
     private float lastShotTime;
 
-    private float xRange = 2.5f;
+    private float xRange = 3.5f;
     private float yRange = 4.75f;
 
     void Start()

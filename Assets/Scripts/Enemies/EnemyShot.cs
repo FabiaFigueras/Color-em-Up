@@ -21,7 +21,7 @@ public class EnemyShot : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime);
+        transform.Translate(Vector3.up * speed * Time.deltaTime);
         if (transform.position.y < -5.5) {
             Destroy(gameObject);
         }

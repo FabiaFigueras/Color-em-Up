@@ -50,7 +50,7 @@ public class EnemyBasic : MonoBehaviour
     }
 
     protected void Move() {
-        transform.Translate(0, -movementSpeed * Time.deltaTime, 0, Space.World);
+        transform.Translate(GetPointToLookAt() * movementSpeed * Time.deltaTime);
     }
 
     protected void Attack() {
@@ -71,11 +71,7 @@ public class EnemyBasic : MonoBehaviour
     }
 
     protected Vector3 GetPointToLookAt() {
-        return Vector3.down;
-    }
-
-    protected Vector3 GetAttackDirection() {
-        return Vector3.down;
+        return Vector3.up; // Y
     }
 
     protected int GetPoints() {

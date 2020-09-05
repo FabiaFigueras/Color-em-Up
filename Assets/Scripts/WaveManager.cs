@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour
             EnemyBasic enemy = Instantiate(
                 wave.enemies[i].enemy,
                 transform.position + wave.enemies[i].position, 
-                Quaternion.Euler(wave.enemies[i].rotation)
+                Quaternion.Euler(new Vector3(0, 0, 180 + wave.enemies[i].inclination))
             );
             enemy.bulletWeakness = wave.enemies[i].type;
         }
@@ -59,7 +59,7 @@ public class Wave {
 [System.Serializable]
 public class EnemyInWave {
     public EnemyBasic enemy;
-    public Vector3 position;
-    public Vector3 rotation;
-    public BulletType type; // Type equals weakness
+    public Vector3 position = new Vector3(0,0,0);
+    public int inclination = 0;
+    public BulletType type = BulletType.DEFAULT; // Type equals weakness
 }

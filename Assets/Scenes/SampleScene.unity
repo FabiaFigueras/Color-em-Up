@@ -266,68 +266,18 @@ MonoBehaviour:
   waves:
   - timeAfterLastWave: 0
     enemies:
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -1.5, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
+    - enemy: {fileID: 0}
+      position: {x: -7, y: 0, z: 0}
+      inclination: 45
       type: 0
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: 1.5, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
+    - enemy: {fileID: 0}
+      position: {x: -6.5, y: 0, z: 0}
+      inclination: 0
       type: 0
-  - timeAfterLastWave: 7
-    enemies:
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -1.5, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 1
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: 0, y: -0.5, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 2
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: 1.5, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 3
-  - timeAfterLastWave: 7
-    enemies:
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -2, y: -1, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 1
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -1.5, y: -0.25, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 2
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -1, y: 0.5, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 3
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: 1, y: 0.5, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 3
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: 1.5, y: -0.25, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 2
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: 2, y: -1, z: 0}
-      rotation: {x: 0, y: 0, z: 0}
-      type: 1
-  - timeAfterLastWave: 7
-    enemies:
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -4, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 30}
+    - enemy: {fileID: 0}
+      position: {x: -6, y: 0, z: 0}
+      inclination: 0
       type: 0
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -4, y: 0.5, z: 0}
-      rotation: {x: 0, y: 0, z: 30}
-      type: 0
-    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
-      position: {x: -4, y: 1, z: 0}
-      rotation: {x: 0, y: 0, z: 30}
-      type: 3
 --- !u!4 &651153942
 Transform:
   m_ObjectHideFlags: 0
