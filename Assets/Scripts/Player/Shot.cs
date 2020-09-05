@@ -8,9 +8,11 @@ public class Shot : MonoBehaviour
     private BulletType type = BulletType.DEFAULT;
     private bool barrierCollided = false;
 
+    private GameManager gameManager;
+
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class Shot : MonoBehaviour
         } else if (col.CompareTag("Enemy")) {
             EnemyBasic enemyCol = col.gameObject.GetComponent<EnemyBasic>();
             if (type == enemyCol.bulletWeakness || enemyCol.bulletWeakness == BulletType.DEFAULT) {
+                gameManager.EnemyDestroyed(enemyCol.pointsAwarded);
                 Destroy(enemyCol.gameObject);
             }
         }

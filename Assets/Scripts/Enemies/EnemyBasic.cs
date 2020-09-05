@@ -27,6 +27,7 @@ public class EnemyBasic : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         timePassedBetweenAttacks = timeBetweenAttacks;
         bullet.SetBulletType(bulletWeakness);
+        GetComponent<SpriteRenderer>().color = bulletWeakness.GetColor();
     }
 
     void Update()

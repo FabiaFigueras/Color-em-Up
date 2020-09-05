@@ -7,13 +7,16 @@ public class EnemyShot : MonoBehaviour
     public float speed = 5f;
     private BulletType type = BulletType.DEFAULT;
 
+    private GameManager gameManager;
+
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     public void SetBulletType(BulletType newType) {
         type = newType;
+        GetComponent<SpriteRenderer>().color = type.GetColor();
     }
 
     void Update()
@@ -28,6 +31,7 @@ public class EnemyShot : MonoBehaviour
         if (col.CompareTag("Player")) {
             Debug.Log("Player hit trigger");
             Destroy(gameObject);
+            gameManager.HitTaken();
         }
     }
 }

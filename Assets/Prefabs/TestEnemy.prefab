@@ -99,7 +99,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0, z: 0}
   initialRotation: {x: 0, y: 0, z: 0}
   movementSpeed: 1.25
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 2.5
   bullet: {fileID: 6615368943945673710, guid: 7eb6bda83a9634444bf070063cebb85d, type: 3}
   bulletWeakness: 1
   pointsAwarded: 10

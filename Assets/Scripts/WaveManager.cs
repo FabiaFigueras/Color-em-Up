@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    public GameManager gameManager;
+
+    [Header("Waves")]
+    [Range(1f, 15f)]
+    public int startingWave = 1;
     public List<Wave> waves;
+    private int scorePerWave = 25; // Multiplied for every wave index
+ 
     private int currentWave = 0;
 
     void Start()
     {
-        if (waves.Count > 0) {
+        startingWave--; // Adapt it to list indexes
+        currentWave = startingWave;
+        if (waves.Count > 0 && startingWave < waves.Count) {
             StartCoroutine(SendNextWave(waves[0].timeAfterLastWave));
         }
     }
@@ -18,6 +27,8 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         InstantiateEnemies();
         currentWave++;
+        gameManager.NewWave(scorePerWave * currentWave);
+
         if (currentWave < waves.Count) {
             StartCoroutine(SendNextWave(waves[currentWave].timeAfterLastWave));
         } else {

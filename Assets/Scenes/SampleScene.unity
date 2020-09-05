@@ -696,7 +696,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fbb26556399d44f87399f3673aa09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
+  gameManager: {fileID: 1266379757}
+  startingWave: 1
+  waves:
+  - timeAfterLastWave: 0
+    enemies:
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: -1.5, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 0
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: 1.5, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 0
+  - timeAfterLastWave: 5
+    enemies:
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: -1.5, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 1
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: 0, y: -0.5, z: 0}
+      rotation: {x: 0, y: 0, z: 180}
+      type: 2
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: 1.5, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 3
+  - timeAfterLastWave: 5
+    enemies:
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: -2, y: -1, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 1
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: -1.5, y: -0.25, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 2
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: -1, y: 0.5, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 3
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: 1, y: 0.5, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 3
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: 1.5, y: -0.25, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 2
+    - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
+      position: {x: 2, y: -1, z: 0}
+      rotation: {x: 0, y: 0, z: 0}
+      type: 1
 --- !u!4 &651153942
 Transform:
   m_ObjectHideFlags: 0
@@ -709,7 +761,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &753466002
 GameObject:
@@ -854,7 +906,7 @@ Transform:
   - {fileID: 753466003}
   - {fileID: 2035263207}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &888334026
 MonoBehaviour:
@@ -871,6 +923,17 @@ MonoBehaviour:
   movementSpeed: 3.5
   bullet: {fileID: 7030157052941058865, guid: a1c6e31b8c5b9014dadb2f9588762f91, type: 3}
   secondsBetweenShots: 0.2
+--- !u!114 &1266379757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2175494036741476655, guid: 747bcb623122fa84294697112284e608, type: 3}
+  m_PrefabInstance: {fileID: 9092134601080203930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1af1bcca1822914a901d2a0f1880718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2035263206
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,3 +981,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 150
+--- !u!1001 &9092134601080203930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736716, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600138799492736719, guid: 747bcb623122fa84294697112284e608, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 747bcb623122fa84294697112284e608, type: 3}
