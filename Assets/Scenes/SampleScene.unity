@@ -697,7 +697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1266379757}
-  startingWave: 1
+  startingWave: 3
   waves:
   - timeAfterLastWave: 0
     enemies:
@@ -709,7 +709,7 @@ MonoBehaviour:
       position: {x: 1.5, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
       type: 0
-  - timeAfterLastWave: 5
+  - timeAfterLastWave: 7
     enemies:
     - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
       position: {x: -1.5, y: 0, z: 0}
@@ -723,7 +723,7 @@ MonoBehaviour:
       position: {x: 1.5, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
       type: 3
-  - timeAfterLastWave: 5
+  - timeAfterLastWave: 7
     enemies:
     - enemy: {fileID: 3856684701530192875, guid: d71b685ad773e8b458c10aa1071bd4bf, type: 3}
       position: {x: -2, y: -1, z: 0}

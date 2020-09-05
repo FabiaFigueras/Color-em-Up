@@ -26,7 +26,6 @@ public class EnemyBasic : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         timePassedBetweenAttacks = timeBetweenAttacks;
-        bullet.SetBulletType(bulletWeakness);
         GetComponent<SpriteRenderer>().color = bulletWeakness.GetColor();
     }
 
@@ -47,7 +46,8 @@ public class EnemyBasic : MonoBehaviour
         }
 
         timePassedBetweenAttacks = 0;
-        Instantiate(bullet, transform.position, transform.rotation);
+        EnemyShot newBullet = Instantiate(bullet, transform.position, transform.rotation);
+        newBullet.SetBulletType(bulletWeakness);
     }
 
     protected Vector3 GetPointToLookAt() {

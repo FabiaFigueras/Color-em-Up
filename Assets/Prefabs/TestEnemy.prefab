@@ -98,10 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 0, z: 0}
   initialRotation: {x: 0, y: 0, z: 0}
-  movementSpeed: 1.25
+  movementSpeed: 1
   timeBetweenAttacks: 2.5
   bullet: {fileID: 6615368943945673710, guid: 7eb6bda83a9634444bf070063cebb85d, type: 3}
-  bulletWeakness: 1
+  bulletWeakness: 3
   pointsAwarded: 10
 --- !u!60 &3856684701530192872
 PolygonCollider2D:

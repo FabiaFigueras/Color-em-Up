@@ -39,12 +39,12 @@ public class WaveManager : MonoBehaviour
     private void InstantiateEnemies() {
         Wave wave = waves[currentWave];
         for (int i = 0; i < wave.enemies.Count; i++) {
-            Instantiate(
+            EnemyBasic enemy = Instantiate(
                 wave.enemies[i].enemy,
                 transform.position + wave.enemies[i].position, 
                 Quaternion.Euler(wave.enemies[i].rotation)
             );
-            wave.enemies[i].enemy.bulletWeakness = wave.enemies[i].type;
+            enemy.bulletWeakness = wave.enemies[i].type;
         }
     }
 
