@@ -34,6 +34,7 @@ public class Shot : MonoBehaviour
             if (enemyCol.CanBeDamaged(type)) {
                 gameManager.EnemyDestroyed(enemyCol.pointsAwarded);
                 enemyCol.DestroyShip();
+                Destroy(gameObject);
             }
         }
     }

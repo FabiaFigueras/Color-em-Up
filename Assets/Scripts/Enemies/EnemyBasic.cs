@@ -44,6 +44,8 @@ public class EnemyBasic : MonoBehaviour
         if (isAlive) {
             Move();
             Attack();
+
+            CheckDeathBounds();
         }
     }
 
@@ -60,6 +62,12 @@ public class EnemyBasic : MonoBehaviour
         timePassedBetweenAttacks = 0;
         EnemyShot newBullet = Instantiate(bullet, transform.position, transform.rotation);
         newBullet.SetBulletType(bulletWeakness);
+    }
+
+    private void CheckDeathBounds() {
+        if (transform.position.y <= -6) {
+            Destroy(gameObject);
+        }
     }
 
     protected Vector3 GetPointToLookAt() {
