@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7030157052941058865
+--- !u!1 &1811253371970223442
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7030157052941058876}
-  - component: {fileID: 7030157052941058867}
-  - component: {fileID: 7030157052941058866}
-  - component: {fileID: 5942344923110172801}
-  - component: {fileID: -8676251227821324547}
-  - component: {fileID: 7030157052941058877}
+  - component: {fileID: 1811253371970223455}
+  - component: {fileID: 1811253371970223440}
+  - component: {fileID: 1811253371970223441}
+  - component: {fileID: 3082024511274669794}
+  - component: {fileID: 9161795768983025822}
+  - component: {fileID: 6615368943945673710}
   m_Layer: 8
-  m_Name: TestShot
+  m_Name: ShotEnemy_Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7030157052941058876
+--- !u!4 &1811253371970223455
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030157052941058865}
+  m_GameObject: {fileID: 1811253371970223442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.972979, y: -0.7709968, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7030157052941058867
+--- !u!212 &1811253371970223440
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030157052941058865}
+  m_GameObject: {fileID: 1811253371970223442}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,14 +86,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7030157052941058866
+--- !u!95 &1811253371970223441
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030157052941058865}
+  m_GameObject: {fileID: 1811253371970223442}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 34c39932271544348908048c19327a65, type: 2}
@@ -105,13 +105,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &5942344923110172801
+--- !u!61 &3082024511274669794
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030157052941058865}
+  m_GameObject: {fileID: 1811253371970223442}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -131,14 +131,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.24279216, y: 0.5}
   m_EdgeRadius: 0
---- !u!50 &-8676251227821324547
+--- !u!50 &9161795768983025822
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030157052941058865}
+  m_GameObject: {fileID: 1811253371970223442}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -152,16 +152,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7030157052941058877
+--- !u!114 &6615368943945673710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030157052941058865}
+  m_GameObject: {fileID: 1811253371970223442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e6603f7b707ff458309612b5427f5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 85b593700b805b54fbcb719e89bd01e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4

@@ -27,6 +27,11 @@ public class Shot : MonoBehaviour
             // Change to the element of that barrier part
             type = col.gameObject.GetComponent<BarrierModifier>().modifierType;
             GetComponent<SpriteRenderer>().color = type.GetColor();
+        } else if (col.CompareTag("Enemy")) {
+            EnemyBasic enemyCol = col.gameObject.GetComponent<EnemyBasic>();
+            if (type == enemyCol.bulletWeakness) {
+                Destroy(enemyCol.gameObject);
+            }
         }
     }
 }
