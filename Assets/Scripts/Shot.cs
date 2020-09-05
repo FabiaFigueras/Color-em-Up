@@ -29,7 +29,7 @@ public class Shot : MonoBehaviour
             GetComponent<SpriteRenderer>().color = type.GetColor();
         } else if (col.CompareTag("Enemy")) {
             EnemyBasic enemyCol = col.gameObject.GetComponent<EnemyBasic>();
-            if (type == enemyCol.bulletWeakness) {
+            if (type == enemyCol.bulletWeakness || enemyCol.bulletWeakness == BulletType.DEFAULT) {
                 Destroy(enemyCol.gameObject);
             }
         }
