@@ -154,16 +154,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPosition: {x: 0, y: 0, z: 0}
   initialRotation: {x: 0, y: 0, z: 0}
-  movementSpeed: 0
+  movementSpeed: 5
   timeBetweenAttacks: 1
-  bullet: {fileID: 0}
+  bullet: {fileID: 4109527735252968770, guid: 38c2dc70cbb038a45922a51779042ff8, type: 3}
   bulletWeakness: 0
   pointsAwarded: 0
   barrier: {fileID: 0}
-  rotationSpeed: 0
+  rotationSpeed: 50
   rotationSense: -1
   attackTowardsEnemy: 0
-  numberOfAttacks: 10
+  numberOfAttacks: 25
   initialRotationPosition: {x: 0, y: 3, z: 0}
 --- !u!95 &442535191576765854
 Animator:

@@ -21,7 +21,6 @@ public class OrbitEnemy : EnemyBasic
     [Header ("Orbit Enemy")]
     public GameObject barrier;
     public float rotationSpeed;
-    public SENSE_OF_ROTATION rotationSense = SENSE_OF_ROTATION.ClockWise;
     public bool attackTowardsEnemy = false;
     public int numberOfAttacks = 10;
 
@@ -73,6 +72,10 @@ public class OrbitEnemy : EnemyBasic
         if (angleRotated >= 90) {
             currentState = ORBIT_STATE.ORBIT;
             angleRotated = 0;
+
+            // Set the number of attacks (in case we were created programmatically)
+            numberOfAttacks = Mathf.FloorToInt(timeBetweenAttacks);
+            attackAngle = 360 / numberOfAttacks;
         }
     }
 

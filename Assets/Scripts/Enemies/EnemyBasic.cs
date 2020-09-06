@@ -19,6 +19,8 @@ public class EnemyBasic : MonoBehaviour
     public Vector3 initialRotation;
     public float movementSpeed;
     private bool isAlive = true;
+    // Only for Orbit enemy, but I don't care anymore
+    public SENSE_OF_ROTATION rotationSense = SENSE_OF_ROTATION.ClockWise;
 
     [Header("Combat attributes")]
     public float timeBetweenAttacks = 1f;

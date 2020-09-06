@@ -18,26 +18,36 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Waves count: " + waves.Count);
+
+        // Remove one of the orbit enemies waves
+        waves.RemoveAt(3);
     }
 
     private void InitSpawning() {
         Debug.Log("Init spawning");
-        currentWave = 0;
         if (waves.Count > 0) {
-            spawnCoroutine = SendNextWave(waves[0].timeAfterLastWave);
+            
+            currentWave = Random.Range(0, waves.Count);
+            // currentWave = 9;
+
+            spawnCoroutine = SendNextWave(waves[currentWave].waveTime);
             StartCoroutine(spawnCoroutine);
         }
     }
 
     IEnumerator SendNextWave(float timeToWait) {
-        waveTimeModifier -= 0.1f;
-        yield return new WaitForSeconds(Mathf.Max(2f, timeToWait * waveTimeModifier));
+        waveTimeModifier -= 0.025f;
         InstantiateEnemies();
         
-        currentWave = Random.Range(0, waves.Count-1);
-        gameManager.NewWave(scorePerWave * currentWave);
+        currentWave = Random.Range(0, waves.Count);
+        // currentWave = 9;
 
-        spawnCoroutine = SendNextWave(waves[currentWave].timeAfterLastWave);
+        Debug.Log("New wave: "+ currentWave);
+        gameManager.NewWave();
+
+        yield return new WaitForSeconds(Mathf.Max(2f, timeToWait * waveTimeModifier));
+        spawnCoroutine = SendNextWave(waves[currentWave].waveTime);
         StartCoroutine(spawnCoroutine);
     }
 
@@ -50,6 +60,9 @@ public class WaveManager : MonoBehaviour
                 Quaternion.Euler(new Vector3(0, 0, 180 + wave.enemies[i].inclination))
             );
             enemy.bulletWeakness = wave.enemies[i].type;
+            enemy.timeBetweenAttacks = wave.enemies[i].timeBetweenAttacks;
+            enemy.movementSpeed = wave.enemies[i].speed;
+            enemy.rotationSense = wave.enemies[i].rotationDirection;
         }
     }
 
@@ -70,7 +83,7 @@ public class WaveManager : MonoBehaviour
 
 [System.Serializable]
 public class Wave {
-    public float timeAfterLastWave = 5f;
+    public float waveTime = 5f;
     public List<EnemyInWave> enemies;
 }
 
@@ -80,4 +93,7 @@ public class EnemyInWave {
     public Vector3 position = new Vector3(0,0,0);
     public int inclination = 0;
     public BulletType type = BulletType.DEFAULT; // Type equals weakness
+    public float timeBetweenAttacks = 2.5f;
+    public float speed = 1f;
+    public SENSE_OF_ROTATION rotationDirection = SENSE_OF_ROTATION.ClockWise;
 }

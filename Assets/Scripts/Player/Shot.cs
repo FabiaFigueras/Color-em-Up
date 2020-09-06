@@ -48,7 +48,7 @@ public static class Extensions {
             case BulletType.GREEN:
                 return new Color(0.5625f, 0.7422f, 0.4258f);
             case BulletType.BLUE:
-                return new Color(0.0664f, 0.539f, 0.6953f);
+                return new Color(0.3664f, 0.739f, 0.9953f);
             default:
                 return Color.white;
         }

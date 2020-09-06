@@ -52,9 +52,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void NewWave(int waveScore) {
+    public void NewWave() {
         if (shipPower > 0) {
-            UpdateScore(waveScore);
+            UpdateScore(50);
         }
     }
 
