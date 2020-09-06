@@ -266,17 +266,27 @@ MonoBehaviour:
   waves:
   - timeAfterLastWave: 0
     enemies:
-    - enemy: {fileID: 0}
-      position: {x: -7, y: 0, z: 0}
-      inclination: 45
-      type: 0
-    - enemy: {fileID: 0}
-      position: {x: -6.5, y: 0, z: 0}
+    - enemy: {fileID: 5888812734569913679, guid: 588a380cf287e4641a4021413eca564e, type: 3}
+      position: {x: -1, y: 0, z: 0}
       inclination: 0
       type: 0
-    - enemy: {fileID: 0}
-      position: {x: -6, y: 0, z: 0}
+    - enemy: {fileID: 5888812734569913679, guid: 588a380cf287e4641a4021413eca564e, type: 3}
+      position: {x: 0, y: 0, z: 0}
       inclination: 0
+      type: 0
+    - enemy: {fileID: 5888812734569913679, guid: 588a380cf287e4641a4021413eca564e, type: 3}
+      position: {x: 1, y: 0, z: 0}
+      inclination: 0
+      type: 0
+  - timeAfterLastWave: 5
+    enemies:
+    - enemy: {fileID: 5888812734569913679, guid: 588a380cf287e4641a4021413eca564e, type: 3}
+      position: {x: 3, y: -2, z: 0}
+      inclination: -45
+      type: 0
+    - enemy: {fileID: 5888812734569913679, guid: 588a380cf287e4641a4021413eca564e, type: 3}
+      position: {x: 3.5, y: -2.5, z: 0}
+      inclination: -45
       type: 0
 --- !u!4 &651153942
 Transform:

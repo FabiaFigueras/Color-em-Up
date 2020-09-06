@@ -15,9 +15,6 @@ public class ShipController : MonoBehaviour
     public float secondsBetweenShots = 0.2f;
     private float lastShotTime;
 
-    private float xRange = 3.5f;
-    private float yRange = 4.75f;
-
     void Start()
     {
         lastShotTime = secondsBetweenShots;
@@ -58,8 +55,8 @@ public class ShipController : MonoBehaviour
         );
 
         transform.position = new Vector3(
-            Mathf.Max(-xRange, Mathf.Min(transform.position.x, xRange)),
-            Mathf.Max(-yRange, Mathf.Min(transform.position.y, yRange)),
+            Mathf.Max(-gameManager.xRange, Mathf.Min(transform.position.x, gameManager.xRange)),
+            Mathf.Max(-gameManager.yRange, Mathf.Min(transform.position.y, gameManager.yRange)),
             transform.position.z
         );
     }

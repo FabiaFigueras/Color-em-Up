@@ -18,7 +18,7 @@ public class Shot : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
-        if (transform.position.y > 10) {
+        if (transform.position.y > (gameManager.yRange + 0.5f)) {
             Destroy(gameObject);
         }
     }

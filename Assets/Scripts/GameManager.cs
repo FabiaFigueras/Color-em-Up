@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     public int scoreLostPerLive = 50;
 
+    public float xRange = 3.5f;
+    public float yRange = 4.75f;
+
     void Start()
     {
         mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<ShakeController>();
@@ -42,5 +45,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("No power left: GAME OVER");
             player.DestroyShip();
         }
+    }
+
+    public bool InsidePlayBounds(Vector3 position) {
+        bool validX = position.x < (xRange * 1.1f) && position.x > (-xRange * 1.1f);
+        bool validY = position.y < yRange && position.y > -yRange;
+        return validX && validY;
     }
 }

@@ -49,17 +49,23 @@ public class EnemyBasic : MonoBehaviour
         }
     }
 
-    protected void Move() {
+    protected virtual void Move() {
         transform.Translate(GetPointToLookAt() * movementSpeed * Time.deltaTime);
     }
 
-    protected void Attack() {
+    protected virtual void Attack() {
         if (timePassedBetweenAttacks < timeBetweenAttacks) {
             timePassedBetweenAttacks += Time.deltaTime;
             return;
         }
-
         timePassedBetweenAttacks = 0;
+        InstantiateBullet();
+    }
+
+    protected void InstantiateBullet() {
+        if (!gameManager.InsidePlayBounds(transform.position)) {
+            return;
+        }
         EnemyShot newBullet = Instantiate(bullet, transform.position, transform.rotation);
         newBullet.SetBulletType(bulletWeakness);
     }
