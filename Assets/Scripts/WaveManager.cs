@@ -16,10 +16,11 @@ public class WaveManager : MonoBehaviour
 
     private float waveTimeModifier = 1f;
 
+    private AudioSource audioSource;
+
     void Start()
     {
-        Debug.Log("Waves count: " + waves.Count);
-
+        audioSource = GetComponent<AudioSource>();
         // Remove one of the orbit enemies waves
         waves.RemoveAt(3);
     }
@@ -73,6 +74,7 @@ public class WaveManager : MonoBehaviour
     }
 
     public void Restart() {
+        audioSource.Play();
         StopSpawning();
         waveTimeModifier = 1f;
         currentWave = 0;

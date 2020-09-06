@@ -15,8 +15,11 @@ public class ShipController : MonoBehaviour
     public float secondsBetweenShots = 0.2f;
     private float lastShotTime;
 
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         lastShotTime = secondsBetweenShots;
         shipCollider = ship.GetComponent<Collider2D>();
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
@@ -71,6 +74,7 @@ public class ShipController : MonoBehaviour
 
     public void DestroyShip() {
         isAlive = false;
+        audioSource.Play();
         Instantiate(deathParticles, transform.position, transform.rotation);
         StartCoroutine(RemoveShip());
     }

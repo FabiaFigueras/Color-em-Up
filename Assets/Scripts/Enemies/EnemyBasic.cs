@@ -13,6 +13,7 @@ public class EnemyBasic : MonoBehaviour
     private ParticleSystem deathParticleSystem;
     private Collider2D shipCollider;
     private Renderer shipRenderer;
+    private AudioSource audioSource;
 
     [Header("Unit attributes")]
     public Vector3 initialPosition;
@@ -36,6 +37,7 @@ public class EnemyBasic : MonoBehaviour
         deathParticleSystem = GetComponentInChildren<ParticleSystem>();
         shipCollider = GetComponent<Collider2D>();
         shipRenderer = GetComponent<Renderer>();
+        audioSource = GetComponent<AudioSource>();
 
         timePassedBetweenAttacks = timeBetweenAttacks;
         GetComponent<SpriteRenderer>().color = bulletWeakness.GetColor();
@@ -106,6 +108,7 @@ public class EnemyBasic : MonoBehaviour
     }
 
     IEnumerator RemoveShip() {
+        audioSource.Play();
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }

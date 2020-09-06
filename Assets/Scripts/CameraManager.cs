@@ -6,7 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     void Start()
     {
-        Screen.SetResolution(960, 1280, false);
+        // Screen.SetResolution(768, 1024, true);
     }
 
     void Update()
