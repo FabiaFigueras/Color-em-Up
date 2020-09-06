@@ -78,5 +78,6 @@ public class ShipController : MonoBehaviour
     IEnumerator RemoveShip() {
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
+        gameManager.ShowGameOverScreen(true);
     }
 }

@@ -44,11 +44,11 @@ public static class Extensions {
     public static Color GetColor(this BulletType type) {
         switch (type) {
             case BulletType.RED:
-                return Color.red;
+                return new Color(0.9141f, 0.0313f, 0.1680f);
             case BulletType.GREEN:
-                return Color.green;
+                return new Color(0.5625f, 0.7422f, 0.4258f);
             case BulletType.BLUE:
-                return Color.blue;
+                return new Color(0.0664f, 0.539f, 0.6953f);
             default:
                 return Color.white;
         }

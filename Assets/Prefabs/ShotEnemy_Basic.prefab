@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6615368943945673710}
   m_Layer: 8
   m_Name: ShotEnemy_Basic
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 1811253371970223442}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 34c39932271544348908048c19327a65, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

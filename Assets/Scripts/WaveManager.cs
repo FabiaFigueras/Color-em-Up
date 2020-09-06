@@ -18,7 +18,6 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        InitSpawning();
     }
 
     private void InitSpawning() {
@@ -55,7 +54,9 @@ public class WaveManager : MonoBehaviour
     }
 
     private void StopSpawning() {
-        StopCoroutine(spawnCoroutine);
+        if (spawnCoroutine != null) {
+            StopCoroutine(spawnCoroutine);
+        }
     }
 
     public void Restart() {
