@@ -23,8 +23,7 @@ public class SinusEnemy : EnemyBasic
         }
     }
 
-    protected override void Attack()
-    {
+    protected override void Attack() {
         if (canAttack && !hasAttacked) {
             InstantiateBullet();
             hasAttacked = true;

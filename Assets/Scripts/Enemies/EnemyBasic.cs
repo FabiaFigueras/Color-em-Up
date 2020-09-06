@@ -71,7 +71,7 @@ public class EnemyBasic : MonoBehaviour
     }
 
     private void CheckDeathBounds() {
-        if (transform.position.y <= -6) {
+        if (transform.position.y <= -6 || transform.position.y >= 10 || transform.position.x <= -10 || transform.position.x >= 10) {
             Destroy(gameObject);
         }
     }
