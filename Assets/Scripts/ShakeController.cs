@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShakeController: MonoBehaviour {
     private float shakeDuration = 0f;
-    private float shakeMagnitude = 0.075f;
+    public float shakeMagnitude = 0.1f;
     private float dampingSpeed = 1.0f;
     Vector3 initialPosition;
 
