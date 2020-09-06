@@ -27,23 +27,27 @@ public class GameManager : MonoBehaviour
     }
 
     public void EnemyDestroyed(int scoreToAdd) {
-        score += scoreToAdd;
-        // Debug.Log("New score: " + score + "[Enemy destroyed]");
+        if (shipPower > 0) {
+            score += scoreToAdd;
+        }
     }
 
     public void NewWave(int waveScore) {
-        score += waveScore;
-        // Debug.Log("New score: " + score + "[New wave]");
+        if (shipPower > 0) {
+            score += waveScore;
+        }
     }
 
     public void HitTaken() {
-        score -= scoreLostPerLive;
-        // Debug.Log("New score: " + score + " [Hit taken]");
-        mainCamera.TriggerShake();
-        shipPower--;
-        if (shipPower <= 0) {
-            Debug.Log("No power left: GAME OVER");
-            player.DestroyShip();
+        if (shipPower > 0) {
+            score -= scoreLostPerLive;
+            // Debug.Log("New score: " + score + " [Hit taken]");
+            mainCamera.TriggerShake();
+            shipPower--;
+            if (shipPower <= 0) {
+                Debug.Log("No power left: GAME OVER");
+                player.DestroyShip();
+            }
         }
     }
 
