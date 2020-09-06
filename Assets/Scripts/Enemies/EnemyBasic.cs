@@ -37,7 +37,11 @@ public class EnemyBasic : MonoBehaviour
 
         timePassedBetweenAttacks = timeBetweenAttacks;
         GetComponent<SpriteRenderer>().color = bulletWeakness.GetColor();
+
+        SetSpecificInfo();
     }
+
+    protected virtual void SetSpecificInfo() {}
 
     void Update()
     {

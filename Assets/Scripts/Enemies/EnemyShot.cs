@@ -7,12 +7,15 @@ public class EnemyShot : MonoBehaviour
     public float speed = 5f;
     private BulletType type = BulletType.DEFAULT;
 
-    private GameManager gameManager;
+    protected GameManager gameManager;
 
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        Prepare();
     }
+
+    public virtual void Prepare() {}
 
     public void SetBulletType(BulletType newType) {
         type = newType;

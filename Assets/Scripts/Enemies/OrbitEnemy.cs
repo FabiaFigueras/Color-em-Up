@@ -11,8 +11,8 @@ enum ORBIT_STATE {
 }
 
 public enum SENSE_OF_ROTATION {
-    ClockWise = 1,
-    Counterclockwise = -1
+    ClockWise = -1,
+    Counterclockwise = 1
 }
 
 
@@ -21,11 +21,22 @@ public class OrbitEnemy : EnemyBasic
     [Header ("Orbit Enemy")]
     public GameObject barrier;
     public float rotationSpeed;
-    public SENSE_OF_ROTATION rotationSense;
+    public SENSE_OF_ROTATION rotationSense = SENSE_OF_ROTATION.ClockWise;
+    public bool attackTowardsEnemy = false;
+    public int numberOfAttacks = 10;
 
     private ORBIT_STATE currentState;
-    private Vector3 initialRotationPosition = new Vector3(0,3,0);
+    public Vector3 initialRotationPosition = new Vector3(0,3,0);
     private float angleRotated;
+    private float attackAngle;
+    private float currentAttackAngle;
+
+    protected override void SetSpecificInfo()
+    {
+        base.SetSpecificInfo();
+        attackAngle = 360 / numberOfAttacks;
+        currentAttackAngle = 0;
+    }
 
     protected override void Move() {
         switch (currentState) {
@@ -69,6 +80,15 @@ public class OrbitEnemy : EnemyBasic
         float angleStep = rotationSpeed * Time.deltaTime;
         transform.RotateAround(Vector3.zero, transform.forward * (int)rotationSense, angleStep);
         angleRotated += angleStep;
+        
+        // Check if we have to attack
+        currentAttackAngle += angleStep;
+        if (currentAttackAngle >= attackAngle) {
+            Instantiate(bullet, transform.position, Quaternion.Euler(transform.right));
+            currentAttackAngle = 0;
+        }
+
+
         if (angleRotated >= 360) {
             currentState = ORBIT_STATE.FINAL_ROTATION;
             angleRotated = 0;
