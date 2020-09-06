@@ -7,33 +7,39 @@ public class WaveManager : MonoBehaviour
     public GameManager gameManager;
 
     [Header("Waves")]
-    [Range(1f, 15f)]
-    public int startingWave = 1;
     public List<Wave> waves;
     private int scorePerWave = 25; // Multiplied for every wave index
  
-    private int currentWave = 0;
+    private int currentWave;
+    private bool isActive = false;
+    private IEnumerator spawnCoroutine;
+
+    private float waveTimeModifier = 1f;
 
     void Start()
     {
-        startingWave--; // Adapt it to list indexes
-        currentWave = startingWave;
-        if (waves.Count > 0 && startingWave < waves.Count) {
-            StartCoroutine(SendNextWave(waves[0].timeAfterLastWave));
+        InitSpawning();
+    }
+
+    private void InitSpawning() {
+        Debug.Log("Init spawning");
+        currentWave = 0;
+        if (waves.Count > 0) {
+            spawnCoroutine = SendNextWave(waves[0].timeAfterLastWave);
+            StartCoroutine(spawnCoroutine);
         }
     }
 
     IEnumerator SendNextWave(float timeToWait) {
-        yield return new WaitForSeconds(timeToWait);
+        waveTimeModifier -= 0.1f;
+        yield return new WaitForSeconds(Mathf.Max(2f, timeToWait * waveTimeModifier));
         InstantiateEnemies();
-        currentWave++;
+        
+        currentWave = Random.Range(0, waves.Count-1);
         gameManager.NewWave(scorePerWave * currentWave);
 
-        if (currentWave < waves.Count) {
-            StartCoroutine(SendNextWave(waves[currentWave].timeAfterLastWave));
-        } else {
-            Debug.Log("No more waves");
-        }
+        spawnCoroutine = SendNextWave(waves[currentWave].timeAfterLastWave);
+        StartCoroutine(spawnCoroutine);
     }
 
     private void InstantiateEnemies() {
@@ -46,6 +52,17 @@ public class WaveManager : MonoBehaviour
             );
             enemy.bulletWeakness = wave.enemies[i].type;
         }
+    }
+
+    private void StopSpawning() {
+        StopCoroutine(spawnCoroutine);
+    }
+
+    public void Restart() {
+        StopSpawning();
+        waveTimeModifier = 1f;
+        currentWave = 0;
+        InitSpawning();
     }
 
 }

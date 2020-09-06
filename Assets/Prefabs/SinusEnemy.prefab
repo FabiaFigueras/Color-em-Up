@@ -5066,7 +5066,7 @@ MonoBehaviour:
   timeBetweenAttacks: 3
   bullet: {fileID: 6615368943945673710, guid: 7eb6bda83a9634444bf070063cebb85d, type: 3}
   bulletWeakness: 0
-  pointsAwarded: 0
+  pointsAwarded: 20
   amplitude: 2
   frequency: 2
 --- !u!95 &3886049463701468539
