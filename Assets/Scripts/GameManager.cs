@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
         UpdateLives();
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
+    }
+
     private void UpdateLives(int value = 0) {
         if (value == 0) {
             shipPower = 3;  // Reset to original value
